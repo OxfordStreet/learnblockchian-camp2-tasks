@@ -6,11 +6,7 @@ contract Counter {
     constructor() {
         counter = 0;
     }
-    modifier onlyDeployer() {
-        require(msg.sender == owner, "Only the contract depoyer can perform this action");
-        _;
-    }
-    function count() public onlyDeployer {
+    function count() public {
         counter = counter + 1;
     }
     function add(uint x) public {
