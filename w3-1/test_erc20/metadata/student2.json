@@ -1,0 +1,16 @@
+{
+    "title": "集训营二期学员卡-我自己",
+    "description": "登链集训营二期 —— 最系统、最实用区块链技术训练营。自己动手铸造NFT",
+    "image": "ipfs://QmcFk2d895v4UmHzDmv84cwKFVWGaW6fif2uHKcGE6gy1s",
+    "attributes": [
+        {
+            "trait_type": "学号",
+            "value": "54171346"
+        },
+        {
+            "trait_type": "昵称",
+            "value": "烟波"
+        }
+    ],
+    "version": "1"
+}

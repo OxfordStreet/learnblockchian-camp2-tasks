@@ -1,0 +1,16 @@
+{
+    "title": "今晚打老虎-小叮当",
+    "description": "这里是description：自己动手铸造NFT，这是我的w3-1作业",
+    "image": "ipfs://QmNfgE2peoJTjVj3NndrPSZDhXrS5WkAYCesXiqxD7mKtL",
+    "attributes": [
+        {
+            "trait_type": "表情",
+            "value": "撅嘴"
+        },
+        {
+            "trait_type": "昵称",
+            "value": "哆啦A梦"
+        }
+    ],
+    "version": "1"
+}
