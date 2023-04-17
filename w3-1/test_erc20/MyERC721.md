@@ -1,5 +1,3 @@
-
-
 1. ## 先部署（remix），后续再通过Foundry命令验证：
 
    ```
@@ -66,8 +64,10 @@ Contract successfully verified
 1. 发行一个 ERC721Token(用自己的名字：今晚打老虎)`https://mumbai.polygonscan.com/address/0x0ce5c75ce822a6f2274b9210cecab784e3930864`
 2. 铸造 一个 NFT，在测试网上发行，在 Opensea 上查看
    ERC721合约部署之后，要mint新的nft需要重新上传新的ipfs文件内容，而metadata中的json文件在部署合约的时候是用不到的，只有mintNFT之前需要上传到ipfs中已获得一个链接作为mint的参数。
-   铸造地址：https://mumbai.polygonscan.com/token/0x0ce5c75ce822a6f2274b9210cecab784e3930864
-   Opensea查看：https://testnets.opensea.io/zh-CN/assets/mumbai/0x0ce5c75ce822a6f2274b9210cecab784e3930864/0
-3. 编写一个合约:使用自己发行的ERC20 Token 来买卖NFT:
-4. NFT 持有者可上架 NFT(list 设置价格 多少个 TOKEN 购买 NFT )
-5. 编写购买NFT 方法，转入对应的TOKEN，获取对应的 NFT
+   铸造地址：https://mumbai.polygonscan.com/token/0x0ce5c75ce822a6f2274b9210cecab784e3930864![1681718375203](image/MyERC721/1681718375203.png)
+3. Opensea查看：https://testnets.opensea.io/zh-CN/assets/mumbai/0x0ce5c75ce822a6f2274b9210cecab784e3930864/0
+
+   ![1681718405356](image/MyERC721/1681718405356.png)
+4. 编写一个合约:使用自己发行的ERC20 Token 来买卖NFT:
+5. NFT 持有者可上架 NFT(list 设置价格 多少个 TOKEN 购买 NFT )
+6. 编写购买NFT 方法，转入对应的TOKEN，获取对应的 NFT

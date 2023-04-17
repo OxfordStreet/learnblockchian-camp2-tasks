@@ -1,9 +1,9 @@
 pragma solidity ^0.8.0;
 
 
-import "openzeppelin-contracts/contracts/token/ERC20/extensions/draft-IERC20Permit.sol";
-import "openzeppelin-contracts/contracts/token/ERC20/IERC20.sol";
-import "openzeppelin-contracts/contracts/interfaces/IERC1820Registry.sol";
+import "@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/interfaces/IERC1820Registry.sol";
 
 interface TokenRecipient {
     function tokensReceived(address sender, uint amount) external returns (bool);
@@ -58,8 +58,6 @@ contract Bank is TokenRecipient{
         require(msg.sender == token, "invalid");
         deposited[from] += amount;
     }
-
-
 
 }
 
