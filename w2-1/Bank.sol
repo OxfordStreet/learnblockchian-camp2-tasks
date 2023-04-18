@@ -27,7 +27,7 @@ contract Bank {
      * addr.call{value: 1 ether}(new bytes(0))   =  addr.transfer(1 ether)
      */ 
     function withdraw() public {
-        (bool success,) = msg.sender.call({value:balanceOf[msg.sender]}(new bytes(0)));
+        (bool success,) = msg.sender.call{value:balanceOf[msg.sender]}(new bytes(0));
         require(success, 'ETH transfer failed');
         balanceOf[msg.sender] = 0;
     }

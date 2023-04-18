@@ -10,3 +10,5 @@ typechain-types
 cache
 artifacts
 
+#remix auto-generate dependencies
+.deps

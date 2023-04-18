@@ -1,7 +1,7 @@
 pragma solidity ^0.8.0;
 
-import "openzeppelin-contracts/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
-import "openzeppelin-contracts/contracts/utils/Counters.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
 
 contract MyERC721 is ERC721URIStorage {
     using Counters for Counters.Counter;
@@ -10,6 +10,8 @@ contract MyERC721 is ERC721URIStorage {
     constructor() ERC721(unicode"今晚打老虎", "CAMP2TASK") {}
 
     //  tokenURI 可以直接传参数string 但是会比较大， 一般放到IPFS中
+
+    // ipfs://QmT4YDZ2dgTSpfHwPndnSuvHrAXNvtDBKNDUwN8nuZiVHT
     function mint(address student, string memory tokenURI)
         public
         returns (uint256)
