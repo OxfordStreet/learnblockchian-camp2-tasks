@@ -1,9 +1,9 @@
 pragma solidity ^0.8.0;
 
 
-import "openzeppelin-contracts/contracts/token/ERC20/extensions/draft-IERC20Permit.sol";
-import "openzeppelin-contracts/contracts/token/ERC20/IERC20.sol";
-import "openzeppelin-contracts/contracts/interfaces/IERC1820Registry.sol";
+import "../lib/openzeppelin-contracts/contracts/token/ERC20/extensions/draft-IERC20Permit.sol";
+import "../lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol";
+import "../lib/openzeppelin-contracts/contracts/interfaces/IERC1820Registry.sol";
 
 interface TokenRecipient {
     function tokensReceived(address sender, uint amount) external returns (bool);
@@ -21,7 +21,6 @@ contract Bank is TokenRecipient{
     constructor(address _token) {
         token = _token;
         // erc1820.setInterfaceImplementer(address(this), TOKENS_RECIPIENT_INTERFACE_HASH, address(this));
-        
     }
 
     // 收款时被回调
@@ -37,9 +36,7 @@ contract Bank is TokenRecipient{
     }
 
     /**
-     * 用户可以一次性的调Bank中的permitDeposit函数同样的做一步存款
-     rsv 签名信息就包含了用户要授权给这个合约要使用的币
-     之后用Bank合约自定义的deposit函数完成转账。
+     * 对用户来说，只调用了这里的permitDeposit(with sig)，只这一笔交易，剩余的由Bank操作的交易可以看作黑盒
     */ 
     function permitDeposit(address user, uint amount, uint deadline, uint8 v, bytes32 r, bytes32 s) external {
         IERC20Permit(token).permit(msg.sender, address(this), amount, deadline, v, r, s); // 检查并完成授权
